@@ -1,1 +1,5 @@
-/example-markup
+# macOS Files
+.DS_Store
+
+node_modules/
+example-markup/
