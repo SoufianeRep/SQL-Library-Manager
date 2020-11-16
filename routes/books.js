@@ -101,7 +101,7 @@ router.post(
       if (error.name === "SequelizeValidationError") {
         //let book = Book.build(req.body);
         //explicitly passing book attributes because Book.build() doesnt give
-        //an id attribute to the instance saving it
+        //an id attribute to the instance without saving it
         res.render("update-book", {
           book: {
             id,

@@ -35,6 +35,9 @@ app.use(function (err, req, res, next) {
   // res.locals.status = err.status;
   // render the error page
   res.status(err.status || 500);
+  if (err.status === 404) {
+    res.render("page-not-found", { title: "Page Not Found" });
+  }
   res.render("error", { title: err.message });
 });
 
