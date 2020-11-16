@@ -1,5 +1,6 @@
 # macOS Files
 .DS_Store
 
+# folders
 node_modules/
 example-markup/
