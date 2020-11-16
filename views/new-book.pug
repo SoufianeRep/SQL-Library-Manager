@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 New Book
+  if errors
+    include form-error
+  if(book)
+    include full-form
+  else
+    include empty-form
+
+  

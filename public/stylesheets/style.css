@@ -95,3 +95,27 @@ input[type=text] {
 .error {
   color: rgb(236, 15, 15);
 }
+
+/* Search form */
+
+.top-box {
+  position: relative;
+  display: inline-block;
+}
+
+.search-form {
+  margin-left: 407px;
+  position: relative;
+  bottom: 50px;
+
+}
+
+.search-form form .search-submit {
+  margin-left: 5px !important;
+}
+
+.search-form form .search {
+  padding: 9px !important;
+  position: relative;
+  top: 1px; 
+}

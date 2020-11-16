@@ -1,0 +1,36 @@
+extends layout.pug
+
+block content
+  h1= title
+  .top-box
+    p
+      a(class="button" href="/books") Main List
+    .search-form  
+      form(action=`/search` method='get')
+        input.search(name="search" type='text' placeholder='Search...')
+        input.search-submit(type='submit' value="Search")
+  if books
+    table
+      thread
+        tr
+          th Title
+          th Author
+          th Genre
+          th Year
+      tbody 
+        each book in books
+          tr
+            td 
+              a(href=`/books/book/${book.id}`) #{book.title}
+            td #{book.author}
+            td #{book.genre}
+            td #{book.year}
+    br
+    br
+    -for (var i = 1; i < (Math.ceil(searchedBooks.length / 10) + 1); i++){
+      a.button(href=`/search?search=${search}&page=${i}&limit=10`)= i
+    -}          
+
+  else 
+    h3= text
+  
