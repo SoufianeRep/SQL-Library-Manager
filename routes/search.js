@@ -41,7 +41,7 @@ router.get(
 
     //no query to the DB will be made if the search field is empty.
     //instead redirects to the main list
-    if (searchQuery === "" || /\s/g.test(searchQuery)) {
+    if (searchQuery.trim().length === 0) {
       res.redirect("/");
     }
 
@@ -99,7 +99,7 @@ router.get(
     res.render("index-search", {
       books,
       searchedBooks,
-      title: "Book Search for: " + searchQuery,
+      title: `Book Search for: "${searchQuery}" `,
       search: searchQuery,
     });
   })

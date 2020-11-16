@@ -78,12 +78,11 @@ router.post(
 router.get(
   "/book/:id",
   asyncHandler(async (req, res, next) => {
-    console.log(req.params.id);
     const book = await Book.findByPk(req.params.id);
     if (book) {
       res.render("update-book", { book, title: book.title });
     } else {
-      next(createError(404, "No Such Article In The Data Base"));
+      next(createError(404, "This Book Does Not Exist In our Data Base"));
     }
   })
 );
